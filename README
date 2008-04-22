@@ -1,0 +1,5 @@
+Small niceties for Ruby and Rails.
+
+For Rails:
+	Acts like a Rails plugin (has init.rb).
+	Rails-specific code in lib/tidbits/rails
