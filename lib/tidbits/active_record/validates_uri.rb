@@ -1,10 +1,10 @@
 require 'uri'
 
-module Tidbits
-  module Rails
+module Tidbits #:nodoc: 
+  module ActiveRecord #:nodoc: 
     module ValidatesUri
       def self.included(base)
-        base.extend Tidbits::Rails::ValidatesUri::ClassMethods
+        base.extend Tidbits::ActiveRecord::ValidatesUri::ClassMethods
       end
       
       module ClassMethods

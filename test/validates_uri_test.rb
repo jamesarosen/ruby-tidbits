@@ -1,8 +1,9 @@
 require File.dirname(__FILE__) + '/test_helper'
+require File.dirname(__FILE__) + '/active_record_helper'
 require 'active_record'
-require 'tidbits/rails/validates_uri'
+require 'tidbits/active_record/validates_uri'
 
-ActiveRecord::Base.send :include, Tidbits::Rails::ValidatesUri
+ActiveRecord::Base.send :include, Tidbits::ActiveRecord::ValidatesUri
 
 class ValidatesUriTest < Test::Unit::TestCase
   

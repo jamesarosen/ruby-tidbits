@@ -1,14 +1,14 @@
-module Tidbits
-  module Rails
+module Tidbits #:nodoc: 
+  module ActiveRecord #:nodoc: 
     module ValidatesEmail
       def self.included(base)
-        base.extend Tidbits::Rails::ValidatesEmail::ClassMethods
+        base.extend Tidbits::ActiveRecord::ValidatesEmail::ClassMethods
       end
       
       module ClassMethods
         def validates_email(*attr_names)
           options = attr_names.extract_options!.symbolize_keys!
-          configuration = { :on => :save, :message => ActiveRecord::Errors.default_error_messages[:invalid], :with => Tidbits::Rails::ValidatesEmail::EmailAddressRegex }
+          configuration = { :on => :save, :message => ::ActiveRecord::Errors.default_error_messages[:invalid], :with => Tidbits::ActiveRecord::ValidatesEmail::EmailAddressRegex }
           configuration.update(options)
           attr_names = [:email] if attr_names.nil? or attr_names.empty?
           raise ArgumentError.new(':with must be a regular expression') unless configuration[:with].is_a?(Regexp)

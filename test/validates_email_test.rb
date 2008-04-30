@@ -1,8 +1,9 @@
 require File.dirname(__FILE__) + '/test_helper'
+require File.dirname(__FILE__) + '/active_record_helper'
 require 'active_record'
-require 'tidbits/rails/validates_email'
+require 'tidbits/active_record/validates_email'
 
-ActiveRecord::Base.send :include, Tidbits::Rails::ValidatesEmail
+ActiveRecord::Base.send :include, Tidbits::ActiveRecord::ValidatesEmail
 
 class ValidatesEmailTest < Test::Unit::TestCase
   
