@@ -15,3 +15,5 @@ module Tidbits #:nodoc:
     end 
   end
 end
+
+::Range.send :include, Tidbits::CoreExtensions::Range::Empty

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'ruby-tidbits'
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.description = 'Ruby Tidbits is a collection of unrelated little helpers for Ruby and Rails'
   s.summary = s.description
   s.authors = ["James Rosen"]

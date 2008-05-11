@@ -2,11 +2,9 @@ require File.join(File.dirname(__FILE__), '/test_helper')
 require 'tidbits/core_extensions/range/intersection'
 require 'tidbits/core_extensions/range/empty'
 
-Range.class_eval do
-  include Tidbits::CoreExtensions::Range::Intersection
-  include Tidbits::CoreExtensions::Range::Empty
+::Range.class_eval do
   def inspect
-      to_s
+    to_s
   end
 end
   

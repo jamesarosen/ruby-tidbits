@@ -1,4 +1,2 @@
-module Tidbits
-  module Rails
-  end
-end
+require 'tidbits/active_record/validates_email'
+require 'tidbits/active_record/validates_uri'

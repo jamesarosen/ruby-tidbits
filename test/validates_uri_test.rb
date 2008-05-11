@@ -3,8 +3,6 @@ require File.dirname(__FILE__) + '/active_record_helper'
 require 'active_record'
 require 'tidbits/active_record/validates_uri'
 
-ActiveRecord::Base.send :include, Tidbits::ActiveRecord::ValidatesUri
-
 class ValidatesUriTest < Test::Unit::TestCase
   
   def setup
