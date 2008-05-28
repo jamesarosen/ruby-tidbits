@@ -57,9 +57,19 @@ end
 
 namespace :gem do
   
-  task :generate do
+  GENERATED_GEMS = FileList.new do |fl|
+    fl.include "#{PROJECT_ROOT}/ruby-tidbits*.gem"
+    fl.exclude "#{PROJECT_ROOT}/**/*.gemspec"  # just in case
+  end
+
+  task :build do
+    system 'gem build ruby-tidbits.gemspec'
   end
   
   task :clean do
+    GENERATED_GEMS.each do |f|
+      rm f if File.exists?(f)
+    end
   end
+  
 end
