@@ -45,12 +45,6 @@ class ValidatesEmailTest < Test::Unit::TestCase
     assert_nil p.errors.on(:email)
   end
   
-  def test_numeric_domain
-    p = @klass.new(:email => 'weird_email@12.24.36.208')
-    assert p.valid?
-    assert_nil p.errors.on(:email)
-  end
-  
   def test_custom_with
     p = @klass.new(:email2 => 'ελλεν@αξιος.net')
     assert p.valid?
